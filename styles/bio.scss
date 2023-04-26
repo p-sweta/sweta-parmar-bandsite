@@ -1,0 +1,54 @@
+@use './partials/variables' as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'AvenirNextLTPro-Regular';
+}
+
+.header{
+    background-color: $bandsite-black;
+
+    &__logo-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0 1rem 0;
+    }
+
+    &__logo {
+        width: 7.5rem;
+        height: 1.25rem;
+        // padding: 1.5rem auto 1rem auto;
+    }
+}
+
+.navbar {
+    
+    &__list {
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+        padding: 0;
+        border-bottom: 2px solid $white;
+    }
+
+    &__item {
+
+        &--active {
+            border-bottom: 2px solid $white;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $white;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        // padding: 0 auto;
+    }
+
+}

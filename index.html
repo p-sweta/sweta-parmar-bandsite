@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/bio.css">
+    <link rel="stylesheet" href="styles/bio.css" />
     <title>Bandsite</title>
   </head>
   <body>
     <header class="header">
-       <div class="header__logo-container"> 
-      <a href="./index.html"><img class="header__logo" src="assets/logos/Logo-bandsite.svg" alt="bandsite logo"></a>
-    </div>
+      <div class="header__logo-container">
+        <a class="header__logo-link" href="./index.html"
+          >BANDSITE</a>
+      </div>
       <nav class="navbar">
         <ul class="navbar__list">
           <li class="navbar__item navbar__item--active">
-            <a class="navbar__link navbar__link--active" href="index.html">Biography</a>
+            <a class="navbar__link navbar__link--active" href="index.html"
+              >Biography</a
+            >
           </li>
           <li class="navbar__item">
             <a class="navbar__link" href="">Shows</a>
@@ -26,21 +29,27 @@
 
     <main>
       <section class="hero">
-        <h2 class="hero__heading">The Bees Knees</h2>
+        <div class="hero__container">
+          <h2 class="hero__heading">The Bees Knees</h2>
+        </div>
       </section>
       <section class="biography">
         <article class="intro">
-          <h2>About the Musicians</h2>
-          <img src="./assets/images/band.jpg" alt="hero bio image" />
-          <p>
+          <h2 class="intro__heading">About the Musicians</h2>
+          <img
+            class="intro__image"
+            src="./assets/images/band.jpg"
+            alt="hero bio image"
+          />
+          <p class="intro__paragraph">
             “We push each other to be the best. It’s not uncommon for one of us
             to say ‘this needs to be better, back to the drawing board’” <br />
             - Bryan Teddy, lead vocalist of The Bees Knees
           </p>
         </article>
-        <article>
-          <h3>The Bees Knees</h3>
-          <p>
+        <article class="about">
+          <h3 class="about__heading">The Bees Knees</h3>
+          <p class="about__paragraph">
             The Bees Knees is a pop rock band originating from San Francisco,
             California. The band consists of lead vocalist Bryan Teddy,
             guitarist Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee
@@ -53,7 +62,7 @@
           </p>
         </article>
         <article>
-          <p>
+          <p class="about__paragraph about__paragraph--second">
             From there, the band has soared, gaining international recognition
             and ranking in the top 10 on the Poster Charts. New fans immediately
             fell in love with the band’s original and organic attitude,
@@ -66,64 +75,111 @@
           </p>
         </article>
       </section>
-      <section>
-        <h2>Photo Gallery</h2>
-        <img src="./assets/images/Photo-gallery-1.jpg" alt="band image 1" />
-        <img src="./assets/images/Photo-gallery-2.jpg" alt="band image 2" />
-        <img src="./assets/images/Photo-gallery-3.jpg" alt="band image 3" />
-        <img src="./assets/images/Photo-gallery-4.jpg" alt="band image 4" />
-        <img src="./assets/images/Photo-gallery-5.jpg" alt="band image 5" />
-        <img src="./assets/images/Photo-gallery-6.jpg" alt="band image 6" />
-        <img src="./assets/images/Photo-gallery-7.jpg" alt="band image 7" />
-        <img src="./assets/images/Photo-gallery-8.jpg" alt="band image 8" />
-        <img src="./assets/images/Photo-gallery-9.jpg" alt="band image 9" />
+      <section class="photos">
+        <h2 class="photos__heading">Photo Gallery</h2>
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-1.jpg"
+          alt="band image 1"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-2.jpg"
+          alt="band image 2"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-3.jpg"
+          alt="band image 3"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-4.jpg"
+          alt="band image 4"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-5.jpg"
+          alt="band image 5"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-6.jpg"
+          alt="band image 6"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-7.jpg"
+          alt="band image 7"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-8.jpg"
+          alt="band image 8"
+        />
+        <img
+          class="photos__img"
+          src="./assets/images/Photo-gallery-9.jpg"
+          alt="band image 9"
+        />
       </section>
     </main>
-    <footer>
-      <section>
-        <div>
-          <h2>Get In Touch</h2>
-          <section>
+    <footer class="footer">
+      <section class="footer__info">
+        <div class="footer__container">
+          <h2 class="footer__heading">Get In Touch</h2>
+          <section class="social">
             <img
+              class="social__icon"
               src="./assets/icons/SVG/Icon-instagram.svg"
               alt="instagram icon"
             />
             <img
+              class="social__icon"
               src="./assets/icons/SVG/Icon-facebook.svg"
               alt="facebook icon"
             />
-            <img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon" />
+            <img
+              class="social__icon"
+              src="./assets/icons/SVG/Icon-twitter.svg"
+              alt="twitter icon"
+            />
           </section>
-          <section>
-            <div>
-              <h4>Cam Adams <br />The Bees Knees Management</h4>
-              <p>503 Broadway Penthouse, <br />New York, NY 10012, USA</p>
-              <p>
-                <a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
+          <section class="contact">
+            <div class="contact__container">
+              <h4 class="contact__heading">Cam Adams <br />The Bees Knees Management</h4>
+              <p class="contact__text">503 Broadway Penthouse, <br />New York, NY 10012, USA</p>
+              <p class="contact__email">
+                <a class="contact__link" href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
               </p>
             </div>
-            <div>
-              <h4>Pearl Gregg <br />Limitless Artist Group</h4>
-              <p>Booking Agent for <br />US / South America / Japan</p>
-              <p>
-                <a href="mailto:pearl.gregg@limitlessag.com"
+            <div class="contact__container">
+              <h4 class="contact__heading">Pearl Gregg <br />Limitless Artist Group</h4>
+              <p class="contact__text">Booking Agent for <br />US / South America / Japan</p>
+              <p class="contact__email">
+                <a class="contact__link" href="mailto:pearl.gregg@limitlessag.com"
                   >pearl.gregg@limitlessag.com</a
                 >
               </p>
             </div>
-            <div>
-              <h4>Carson Whyte <br />ARCH Entertainment</h4>
-              <p>Booking Agent for <br />UK / EU / AU</p>
-              <p>
-                <a href="mailto:cwhyte@archentertainment.com"
+            <div class="contact__container">
+              <h4 class="contact__heading">Carson Whyte <br />ARCH Entertainment</h4>
+              <p class="contact__text">Booking Agent for <br />UK / EU / AU</p>
+              <p class="contact__email">
+                <a class="contact__link" href="mailto:cwhyte@archentertainment.com"
                   >cwhyte@archentertainment.com</a
                 >
               </p>
             </div>
           </section>
         </div>
-        <div>
-          <h3>BANDSITE</h3>
+        <div class="logo__container">
+          <a href="./index.html"
+          ><img
+            class="logo__image"
+            src="assets/logos/Logo-bandsite.svg"
+            alt="bandsite logo"
+        /></a>
         </div>
       </section>
       <div><p>Copyright The Bees Knees © 2021 All Rights Reserved</p></div>

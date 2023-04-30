@@ -2,7 +2,7 @@
 
 @mixin tablet {
     @media (min-width: $tablet-breakpoint) {
-      padding: 0 2.25rem;
+      padding: 0 5vw;
       @content;
     }
   }

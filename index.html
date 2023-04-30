@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/bio.css" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/bio.css"/>
     <title>Bandsite</title>
   </head>
+
   <body>
-    <header class="header">
+    
+    <!-- header section with logo and navbar -->
+    <header>
+      <div class="header">
       <div class="header__logo-container">
-        <a href="./index.html"
-          ><img
-            class="header__logo"
-            src="assets/logos/Logo-bandsite.svg"
-            alt="bandsite logo"
-        /></a>
+        <a href="./index.html">
+          <img class="header__logo" src="assets/logos/Logo-bandsite.svg" alt="bandsite logo"/>
+        </a>
       </div>
       <nav class="navbar">
         <ul class="navbar__list">
           <li class="navbar__item navbar__item--active">
-            <a class="navbar__link navbar__link--active" href="index.html"
-              >Biography</a
-            >
+            <a class="navbar__link navbar__link--active" href="index.html">Biography</a>
           </li>
           <li class="navbar__item">
-            <a class="navbar__link" href="">Shows</a>
+            <a class="navbar__link" href="#">Shows</a>
           </li>
         </ul>
       </nav>
+    </div>
     </header>
 
     <main>
+      <!-- hero section -->
       <section class="hero">
         <div class="hero__container">
           <h2 class="hero__heading">The Bees Knees</h2>
         </div>
       </section>
-      <section class="biography">
+      
+      <!-- bio section -->
+      <section class="biography section-block">
+        
         <article class="intro">
-          <h2 class="intro__heading">About the Musicians</h2>
-          <img
-            class="intro__image"
-            src="./assets/images/band.jpg"
-            alt="hero bio image"
-          />
+          <h2 class="section__heading intro__heading">About the Musicians</h2>
+          <img class="intro__image" src="./assets/images/band.jpg" alt="hero bio image"/>
           <p class="intro__paragraph">
             “We push each other to be the best. It’s not uncommon for one of us
             to say ‘this needs to be better, back to the drawing board’”
-            <p class="intro__vocalist">- Bryan Teddy, lead vocalist of The Bees Knees</p> 
           </p>
+          <p class="intro__vocalist">
+            - Bryan Teddy, lead vocalist of The Bees Knees
+          </p>          
         </article>
+
         <article class="about">
           <h3 class="about__heading">The Bees Knees</h3>
           <div class="about__container">
@@ -65,7 +68,7 @@
             could succeed even further, pushing them to sign with Magenta
             Records.
           </p>
-          <p class="about__paragraph about__paragraph--second">
+          <p class="about__paragraph">
             From there, the band has soared, gaining international recognition
             and ranking in the top 10 on the Poster Charts. New fans immediately
             fell in love with the band’s original and organic attitude,
@@ -78,122 +81,83 @@
           </p>
         </div>
         </article>
+
       </section>
-      <section class="photos">
-        <h2 class="photos__heading">Photo Gallery</h2>
+
+      <!-- photo gallery section -->
+      <section class="photos section-block--gray">
+        <h2 class="section__heading photos-section__heading">Photo Gallery</h2>
         <div class="photos__container">
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-1.jpg"
-          alt="band image 1"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-2.jpg"
-          alt="band image 2"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-3.jpg"
-          alt="band image 3"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-4.jpg"
-          alt="band image 4"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-5.jpg"
-          alt="band image 5"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-6.jpg"
-          alt="band image 6"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-7.jpg"
-          alt="band image 7"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-8.jpg"
-          alt="band image 8"
-        />
-        <img
-          class="photos__img"
-          src="./assets/images/Photo-gallery-9.jpg"
-          alt="band image 9"
-        />
-      </div>
+          <img class="photos__img" src="./assets/images/Photo-gallery-1.jpg" alt="band image 1"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-2.jpg" alt="band image 2"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-3.jpg" alt="band image 3"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-4.jpg" alt="band image 4"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-5.jpg" alt="band image 5"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-6.jpg" alt="band image 6"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-7.jpg" alt="band image 7"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-8.jpg" alt="band image 8"/>
+          <img class="photos__img" src="./assets/images/Photo-gallery-9.jpg" alt="band image 9"/>
+        </div>
       </section>
+
     </main>
+
+    <!-- footer section -->
     <footer class="footer">
+
       <section class="footer__info">
-        <div>
-          <div class="footer__container">
+
+        <div class="footer__container">
           <h2 class="footer__heading">Get in Touch</h2>
           <section class="social">
-            <img
-              class="social__icon social__icon--insta"
-              src="./assets/icons/SVG/Icon-instagram.svg"
-              alt="instagram icon"
-            />
-            <img
-              class="social__icon social__icon--facebook"
-              src="./assets/icons/SVG/Icon-facebook.svg"
-              alt="facebook icon"
-            />
-            <img
-              class="social__icon social__icon--twitter"
-              src="./assets/icons/SVG/Icon-twitter.svg"
-              alt="twitter icon"
-            />
+            <img class="social__icon social__icon--insta" src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram icon"/>
+            <img class="social__icon social__icon--facebook" src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook icon"/>
+            <img class="social__icon social__icon--twitter" src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon"/>
           </section>
         </div>
-          <section class="contact">
-            <div class="contact__container">
-              <h4 class="contact__heading">Cam Adams <br />The Bees Knees Management</h4>
-              <p class="contact__text">503 Broadway Penthouse, <br />New York, NY 10012, USA</p>
-              <p class="contact__email">
-                <a class="contact__link" href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
-              </p>
-            </div>
-            <div class="contact__container contact__container--two">
-              <h4 class="contact__heading">Pearl Gregg <br />Limitless Artist Group</h4>
-              <p class="contact__text">Booking Agent for <br />US / South America / Japan</p>
-              <p class="contact__email">
-                <a class="contact__link" href="mailto:pearl.gregg@limitlessag.com"
-                  >pearl.gregg@limitlessag.com</a
-                >
-              </p>
-            </div>
-            <div class="contact__container contact__container--three">
-              <h4 class="contact__heading">Carson Whyte <br />ARCH Entertainment</h4>
-              <p class="contact__text">Booking Agent for <br />UK / EU / AU</p>
-              <p class="contact__email">
-                <a class="contact__link" href="mailto:cwhyte@archentertainment.com"
-                  >cwhyte@archentertainment.com</a
-                >
-              </p>
-            </div>
-          </section>
-        </div>
+
+        <section class="contact">
+
+          <div class="contact__container">
+            <h4 class="contact__heading">Cam Adams <br/>The Bees Knees Management</h4>
+            <p class="contact__text">503 Broadway Penthouse, <br/>New York, NY 10012, USA</p>
+            <p class="contact__email">
+              <a class="contact__link" href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
+            </p>
+          </div>
+
+          <div class="contact__container">
+            <h4 class="contact__heading">Pearl Gregg <br/>Limitless Artist Group</h4>
+            <p class="contact__text">Booking Agent for <br/>US / South America / Japan</p>
+            <p class="contact__email">
+              <a class="contact__link" href="mailto:pearl.gregg@limitlessag.com">pearl.gregg@limitlessag.com</a>
+            </p>
+          </div>
+
+          <div class="contact__container">
+            <h4 class="contact__heading">Carson Whyte <br/>ARCH Entertainment</h4>
+            <p class="contact__text">Booking Agent for <br/>UK / EU / AU</p>
+            <p class="contact__email">
+              <a class="contact__link" href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a>
+            </p>
+          </div>
+
+        </section>
         
         <div class="logo__container">
-          <a href="./index.html"
-          ><img
-            class="logo__image"
-            src="assets/logos/Logo-bandsite.svg"
-            alt="bandsite logo"
-        /></a>
+          <a href="./index.html">
+            <img class="logo__image" src="assets/logos/Logo-bandsite.svg" alt="bandsite logo"/>
+          </a>
         </div>
+
       </section>
+
       <div class="copyright">
         <p class="copyright__text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
       </div>
+
     </footer>
+
   </body>
+
 </html>

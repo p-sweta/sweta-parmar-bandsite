@@ -1,0 +1,50 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/global" as *;
+
+// CSS styling for hero section
+.hero {
+    background: url(../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__text {
+        margin: 0;
+        padding: 10.5vw 5vw 0 5vw;
+        font-size: 0.86rem;
+        color: $white;
+
+        @include tablet {
+            padding: 7.5vw 5vw 0 5vw;
+            font-size: 1.52rem;
+        }
+
+        @include desktop {
+        padding: 15.5vw 10.4vw 0 10.4vw;
+        }
+    }
+  
+    &__heading {
+      padding: 5.8vw 20vw 45vw 5vw;
+      margin: auto 0;
+      font-family: "AvenirNextLTPro-Demi";
+      color: $white;
+      font-size: 1.5rem;
+  
+      @include tablet {
+        padding: 1.5vw 20vw 33vw 5vw;
+        font-size: 3.75rem;
+        line-height: 1.12;
+      }
+  
+      @include desktop {
+        padding: 1.5vw 50.4vw 19vw 10.4vw;
+      }
+    }
+  
+    &__container {
+      background: rgba(#323232, 0.5);
+    }
+  }
+  

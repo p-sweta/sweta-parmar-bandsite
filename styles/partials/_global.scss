@@ -139,3 +139,187 @@ body {
     }
   }
 }
+
+// footer including social and contact sections
+.footer {
+  @include page-padding;
+  background-color: $bandsite-black;
+  color: $white;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      padding-right: 0;
+    }
+  }
+
+  &__heading {
+    padding-top: 1.2rem;
+    margin: 0.4rem 0;
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 1.4rem;
+
+    @include tablet {
+      padding: 2.4rem 0 1rem 0;
+      font-size: 2.3rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      padding: 0;
+      flex-direction: row;
+    }
+  }
+
+  @include tablet {
+    padding: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  @include desktop {
+    padding: 0 5.2vw;
+  }
+}
+
+// social icons
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: 41.5%;
+  padding-top: 0.7rem;
+
+  &__icon {
+    width: 1.45rem;
+
+    &--facebook {
+      width: 0.9rem;
+
+      @include tablet {
+        width: 2rem;
+      }
+    }
+
+    @include tablet {
+      width: 3rem;
+      height: 1.45rem;
+      padding: 0 0.5rem 0 0.2rem;
+    }
+  }
+
+  @include tablet {
+    justify-content: flex-start;
+    padding: 3.5rem 0 0 1.2rem;
+  }
+
+  @include desktop {
+    padding: 3.7rem 0 0 2.4rem;
+  }
+}
+
+// contact section 
+.contact {
+
+  &__container {
+
+    @include tablet {
+      margin: 0.85rem 0 0 0;
+      padding: 0;
+    }
+
+    @include desktop {
+      margin-top: 1.1rem;
+    }
+  }
+
+  &__heading {
+    padding-top: 0.3rem;
+    font-size: 0.85rem;
+
+    @include tablet {
+      margin-top: 0;
+      padding: 0;
+      line-height: 1.4;
+    }
+  }
+
+  &__text {
+    font-size: 0.8rem;
+    line-height: 1.35;
+
+    @include tablet {
+      margin: 1.6rem 0;
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    font-size: 0.8rem;
+
+    @include tablet {
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
+
+  @include tablet {
+    padding: 0 3.3rem 0 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    justify-content: flex-start;
+    column-gap: 4.75rem;
+  }
+}
+
+// BANDSITE logo 
+.logo {
+  &__container {
+    padding-top: 3rem;
+
+    @include tablet {
+      position: absolute;
+      right: 0vw;
+      top: 7.62vw;
+    }
+
+    @include desktop {
+      right: 5vw;
+      top: 5vw;
+    }
+  }
+
+  &__image {
+    width: 120px;
+    height: 20px;
+  }
+}
+
+// copyright section 
+.copyright {
+  &__text {
+    margin: 0;
+    padding: 0.8rem 0;
+    font-size: 0.68rem;
+
+    @include tablet {
+      font-size: 0.87rem;
+      padding-top: 2rem;
+      padding-bottom: 2.5rem;
+    }
+  }
+}
+

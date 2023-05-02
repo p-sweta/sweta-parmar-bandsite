@@ -6,3 +6,6 @@
 
 # Ignore scss css files
 *.css
+
+# Ignore .vscode files
+.vscode 

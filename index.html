@@ -104,13 +104,26 @@
       <section class="conversation">
         <!-- <h2 class="section__heading">Join the Conversation</h2> -->
 
-        <form id="comment-form" class="comment-form">
-          <legend class="section__heading">Join the Conversation</legend>
-          <img src="./assets/images/Mohan-muruge.jpg" alt="mohan-muruge-avatar">
-          <fieldset>
-            <label for="fullName">Full Name</label>
-            <input type="text" name="fullName" id="fullName" placeholder="Enter your name" required>
+        <form id="comment-form" class="form">
+          <legend class="section__heading form__heading">Join the Conversation</legend>
+          <div class="form__container">
+            <div class="form__image-container">
+          <img class="form__image" src="./assets/images/Mohan-muruge.jpg" alt="mohan-muruge-avatar">
+        </div>
+          
+          <fieldset class="form__fieldset">
+            <div>
+            <label class="form__label" for="fullName">NAME</label><br>
+            <input class="form__input" type="text" name="fullName" id="fullName" placeholder="Enter your name" required>
+          </div>
+          <div>
+            <label class="form__label" for="comment">COMMENT</label><br>
+            <textarea class="form__comment form__input" name="comment" id="comment" placeholder="Add a new comment" required></textarea>
+          </div>
+
+            <button type="submit" class="form__button">COMMENT</button>
           </fieldset>
+        </div>
         </form>
       </section>
 

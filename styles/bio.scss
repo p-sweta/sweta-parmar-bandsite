@@ -305,6 +305,7 @@
   &__input {
     width: 100%;
     font-size: 0.8rem;
+    background-color: $alabaster;
     height: 2.25rem;
     padding: 0.75rem;
     border-radius: 4px;
@@ -359,6 +360,34 @@
       margin-top: 0.5vw;
     }
   
+  }
+}
+
+.comments {
+  @include page-padding;
+
+  &__container{
+    display: flex;
+    border-bottom: 1px solid $mercury;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  &__image-placeholder {
+    border-radius: 50%;
+    background-color: $mercury;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    position: absolute;
+    right: 0;
   }
 }
 

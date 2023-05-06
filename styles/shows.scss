@@ -89,4 +89,66 @@
       }
     }
   }
+
+  .shows {
+    @include page-padding;
+    
+    &__heading {
+      padding-left: 0;
+    }
+
+    &__container {}
+
+    &__info {
+      display: flex;
+      width: 50%;
+      padding: 0 10vw 0 5vw;
+    }
+
+    &__subheading {
+      padding-right: 5vw;
+    }
+
+    &__details-container{
+      border-bottom: 1px solid $mercury;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+
+    &__details {
+    }
+
+    &__label {
+      color: $silver;
+
+      @include tablet {
+        // display: none;
+        padding-left: 0;
+      }
+    }
+
+    &__text {
+      color: $bandsite-darkblack;
+
+      &--date {
+        font-family: "AvenirNextLTPro-Demi";
+      }
+    }
+
+    &__button {
+      width: 100%;
+      border: 1px solid $bandsite-black;
+      border-radius: 4px;
+      height: 40px;
+      font-size: 1rem;
+      margin-bottom: 4vw;
+
+      @include tablet {
+        align-self: flex-end;
+        margin-bottom: 2vw;
+      }
+    }
+  }
   

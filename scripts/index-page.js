@@ -13,7 +13,7 @@ const comments = [
         name: "Miles Acosta",
         date: "12/20/2020",
         comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
-    }, 
+    }
 ]
 
 const conversation = document.querySelector('.conversation');
@@ -22,7 +22,7 @@ const conversation = document.querySelector('.conversation');
 const commentSection = document.createElement('section');
 commentSection.classList.add('comments');
 conversation.appendChild(commentSection);
-console.log(conversation);
+// console.log(conversation);
 
 
 const insertComment = (comment) => {

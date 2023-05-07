@@ -96,18 +96,30 @@
     &__heading {
       @include page-padding;
       padding-top: 6.5vw;
+
+      @include tablet {
+        padding-top: 2.5vw;
+      }
     }
 
-    // &__info {
-    //   @include tablet {
-    //   display: flex;
-    //   width: 50%;
-    //   padding: 0 10vw 0 5vw;
-    //   }
-    // }
+    &__info {
+      @include tablet {
+      display: flex;
+      padding: 0 10vw 0 5vw;
+      }
+    }
 
     &__subheading {
       display: none;
+
+      @include tablet {
+        display: flex;
+        color: $silver;
+        font-size: 0.7rem;
+        font-family: "AvenirNextLTPro-Demi";
+        margin-top: 0;
+        padding: 1.5vw 19.25vw 0 0;
+        }
     }
 
     &__details-container{
@@ -115,13 +127,18 @@
       border-bottom: 1px solid $mercury;
       margin-bottom: 0.57vw;
 
-      // @include tablet {
-      //   display: flex;
-      // }
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding-bottom: 1vw;
+      }
     }
 
-    // &__details {
-    // }
+    &__details {
+      width: 25%;
+    }
 
     &__label {
       color: $silver;
@@ -130,20 +147,31 @@
       font-family: "AvenirNextLTPro-Demi";
       margin: 0;
 
-      // @include tablet {
-      //   display: none;
-      //   
-      // }
+      @include tablet {
+        display: none;
+      }
     }
 
     &__text {
       color: $bandsite-darkblack;
       font-size: 0.8rem;
       margin: 0;
+
+      @include tablet {
+        font-size: 0.86rem;
+        padding: 0;
+        
+      }
       
       &--date {
         font-family: "AvenirNextLTPro-Demi";
       }
+
+      // &--venue {
+      //   @include tablet {
+      //     padding: 1.5vw 4.5vw 0 0;
+      //   }
+      // }
     }
 
     &__button {
@@ -161,10 +189,12 @@
         border: 1px solid $bandsite-darkblack;
       }
 
-      // @include tablet {
-      //   align-self: flex-end;
-      //   margin-bottom: 2vw;
-      // }
+      @include tablet {
+        align-self: flex-end;
+        margin: 2.1vw 0 0 0;
+        padding: 0;
+        width: 21.5%;
+      }
     }
   }
   

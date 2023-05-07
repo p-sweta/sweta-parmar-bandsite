@@ -66,14 +66,20 @@ const locationHeaderEl = document.createElement('h4');
 locationHeaderEl.classList.add('shows__subheading');
 locationHeaderEl.innerText = 'LOCATION';
 
-showsInfoEl.append(dateHeaderEl, venueHeaderEl, locationHeaderEl);
+const emptyEl = document.createElement('h4');
+
+showsInfoEl.append(dateHeaderEl, venueHeaderEl, locationHeaderEl, emptyEl);
+
+const showsListContainerEl = document.createElement('div');
+showsListContainerEl.classList.add('shows__list-container');
+showsContainerEl.appendChild(showsListContainerEl);
 
 /*******/
-for(let i = 0; i < shows.length; i++) {
+for(let i = 0; i < shows.length; i++) { 
     
 const detailsContainerEl = document.createElement('div');
 detailsContainerEl.classList.add('shows__details-container');
-showsContainerEl.appendChild(detailsContainerEl);
+showsListContainerEl.appendChild(detailsContainerEl);
 
 //date
 const detailsDateEl = document.createElement('div');
@@ -139,6 +145,7 @@ upcomingShows(shows);
             <h4 class="shows__subheading">VENUE</h4>
             <h4 class="shows__subheading">LOCATION</h4>
           </div>
+          <div class = shows__list-container>
           <div class="shows__details-container">
             <div class="shows__details">
            -   <h4 class="shows__label">DATE</h4>
@@ -168,6 +175,7 @@ upcomingShows(shows);
               <p class="shows__text shows__text--location">San Francisco, CA</p>
             </div>
             <button class="shows__button">BUY TICKETS</button>
+          </div>
           </div>
         </div>
       </section> */}

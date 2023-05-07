@@ -92,6 +92,12 @@
 
   .shows {
     margin-bottom: 5vw;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-around;
+      column-gap: 1rem;
+    }
     
     &__heading {
       @include page-padding;
@@ -105,7 +111,8 @@
     &__info {
       @include tablet {
       display: flex;
-      padding: 0 10vw 0 5vw;
+      padding: 0 2vw 0 5vw;
+      margin-bottom: 0.5rem;
       }
     }
 
@@ -118,8 +125,22 @@
         font-size: 0.7rem;
         font-family: "AvenirNextLTPro-Demi";
         margin-top: 0;
-        padding: 1.5vw 19.25vw 0 0;
+        padding: 1.5vw 0vw 0 0;
+        width: 25%;
         }
+    }
+
+    &__container {
+      @include desktop {
+        width: 65%;
+      }
+    }
+
+    &__list-container {
+      display: flex;
+      flex-direction: column; 
+      justify-content: space-between;
+      row-gap: 1rem;
     }
 
     &__details-container{
@@ -127,17 +148,23 @@
       border-bottom: 1px solid $mercury;
       margin-bottom: 0.57vw;
 
+      &:hover {
+        background-color: $alabaster;
+      }
+
       @include tablet {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0;
-        padding-bottom: 1vw;
+        margin: 0 2.2vw;
+        padding: 0 0 0 2.5vw;
+        vertical-align: middle;
       }
     }
 
     &__details {
-      width: 25%;
+      @include tablet {
+        padding: 0;
+        width: 25%;
+      }
     }
 
     &__label {
@@ -159,19 +186,28 @@
 
       @include tablet {
         font-size: 0.86rem;
-        padding: 0;
-        
+        padding: 5vw 0 0 0;
+        // margin-top: -1.5vw;
       }
       
       &--date {
         font-family: "AvenirNextLTPro-Demi";
+        @include tablet {
+          padding: 1vw 0 0 0;
+        }
       }
 
-      // &--venue {
-      //   @include tablet {
-      //     padding: 1.5vw 4.5vw 0 0;
-      //   }
-      // }
+      &--venue {
+        @include tablet {
+          padding: 1vw 0 0 0;
+        }
+      }
+
+      &--location {
+        @include tablet {
+          padding: 1vw 0 0 0;
+        }
+      }
     }
 
     &__button {
@@ -191,9 +227,9 @@
 
       @include tablet {
         align-self: flex-end;
-        margin: 2.1vw 0 0 0;
+        margin: 0 0 1.9vw 1.5vw;
         padding: 0;
-        width: 21.5%;
+        width: 21%;
       }
     }
   }

@@ -55,18 +55,19 @@ showsInfoEl.classList.add('shows__info');
 showsContainerEl.appendChild(showsInfoEl);
 
 const dateHeaderEl = document.createElement('h4');
-dateHeaderEl.classList.add('shows__subheading');
+dateHeaderEl.classList.add('shows__subheading', 'shows__subheading--left');
 dateHeaderEl.innerText = 'DATE';
 
 const venueHeaderEl = document.createElement('h4');
-venueHeaderEl.classList.add('shows__subheading');
+venueHeaderEl.classList.add('shows__subheading', 'shows__subheading--middle');
 venueHeaderEl.innerText = 'VENUE';
 
 const locationHeaderEl = document.createElement('h4');
-locationHeaderEl.classList.add('shows__subheading');
+locationHeaderEl.classList.add('shows__subheading', 'shows__subheading--right');
 locationHeaderEl.innerText = 'LOCATION';
 
 const emptyEl = document.createElement('h4');
+emptyEl.classList.add('shows__subheading');
 
 showsInfoEl.append(dateHeaderEl, venueHeaderEl, locationHeaderEl, emptyEl);
 

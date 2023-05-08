@@ -1,217 +1,153 @@
 const shows = [
-    {
-        date: "Mon Sept 06 2021",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Tue Sept 21 2021",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Oct 15 2021",
-        venue: "View Lounge",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Sat Nov 06 2021",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Fri Nov 26 2021",
-        venue: "Moscow Center",
-        location: "San Francisco, CA"
-    },
-    {
-        date: "Wed Dec 15 2021",
-        venue: "Press Club",
-        location: "San Francisco, CA"
-    }
-]
+  {
+    date: "Mon Sept 06 2021",
+    venue: "Ronald Lane",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Tue Sept 21 2021",
+    venue: "Pier 3 East",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Fri Oct 15 2021",
+    venue: "View Lounge",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Sat Nov 06 2021",
+    venue: "Hyatt Agency",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Fri Nov 26 2021",
+    venue: "Moscow Center",
+    location: "San Francisco, CA",
+  },
+  {
+    date: "Wed Dec 15 2021",
+    venue: "Press Club",
+    location: "San Francisco, CA",
+  },
+];
 
-
-
+//adding a section for show section
 // const showsList = document.querySelector('.main');
 // const showsEl = document.createElement('section');
 // showsEl.classList.add('shows');
 // showsList.appendChild(showsEl);
 // console.log(showsList);
 
+
+//function for adding a shows section and inserting mutiple rows with show details with for loop 
 const upcomingShows = (show) => {
-const showsSectionEl = document.querySelector('.shows');
-const headerEl = document.createElement('h2');
-headerEl.classList.add('section__heading', 'shows__heading');
-headerEl.innerText = 'Shows';
-showsSectionEl.appendChild(headerEl);
+  const showsSectionEl = document.querySelector(".shows");
 
-const showsContainerEl = document.createElement('div');
-showsContainerEl.classList.add('shows__container');
-showsSectionEl.appendChild(showsContainerEl);
+  //<h2 class="section__heading shows__heading">Shows</h2>
+  const headerEl = document.createElement("h2");
+  headerEl.classList.add("section__heading", "shows__heading");
+  headerEl.innerText = "Shows";
+  showsSectionEl.appendChild(headerEl);
 
-const showsInfoEl = document.createElement('div');
-showsInfoEl.classList.add('shows__info');
-showsContainerEl.appendChild(showsInfoEl);
+  //div that will contain subheaders and shows list container
+  const showsContainerEl = document.createElement("div");
+  showsContainerEl.classList.add("shows__container");
+  showsSectionEl.appendChild(showsContainerEl);
 
-const dateHeaderEl = document.createElement('h4');
-dateHeaderEl.classList.add('shows__subheading', 'shows__subheading--left');
-dateHeaderEl.innerText = 'DATE';
+  const showsInfoEl = document.createElement("div");
+  showsInfoEl.classList.add("shows__info");
+  showsContainerEl.appendChild(showsInfoEl);
 
-const venueHeaderEl = document.createElement('h4');
-venueHeaderEl.classList.add('shows__subheading', 'shows__subheading--middle');
-venueHeaderEl.innerText = 'VENUE';
+  const dateHeaderEl = document.createElement("h4");
+  dateHeaderEl.classList.add("shows__subheading", "shows__subheading--left");
+  dateHeaderEl.innerText = "DATE";
 
-const locationHeaderEl = document.createElement('h4');
-locationHeaderEl.classList.add('shows__subheading', 'shows__subheading--right');
-locationHeaderEl.innerText = 'LOCATION';
+  const venueHeaderEl = document.createElement("h4");
+  venueHeaderEl.classList.add("shows__subheading", "shows__subheading--middle");
+  venueHeaderEl.innerText = "VENUE";
 
-const emptyEl = document.createElement('h4');
-emptyEl.classList.add('shows__subheading');
+  const locationHeaderEl = document.createElement("h4");
+  locationHeaderEl.classList.add("shows__subheading", "shows__subheading--right");
+  locationHeaderEl.innerText = "LOCATION";
 
-showsInfoEl.append(dateHeaderEl, venueHeaderEl, locationHeaderEl, emptyEl);
+  const emptyEl = document.createElement("h4");
+  emptyEl.classList.add("shows__subheading");
 
-const showsListContainerEl = document.createElement('div');
-showsListContainerEl.classList.add('shows__list-container');
-showsContainerEl.appendChild(showsListContainerEl);
+  showsInfoEl.append(dateHeaderEl, venueHeaderEl, locationHeaderEl, emptyEl);
 
-/*******/
-for(let i = 0; i < shows.length; i++) { 
-    
-const detailsContainerEl = document.createElement('div');
-detailsContainerEl.classList.add('shows__details-container', 'shows__row');
-showsListContainerEl.appendChild(detailsContainerEl);
+  const showsListContainerEl = document.createElement("div");
+  showsListContainerEl.classList.add("shows__list-container");
+  showsContainerEl.appendChild(showsListContainerEl);
 
-//date
-const detailsDateEl = document.createElement('div');
-detailsDateEl.classList.add('shows__details', 'shows__row');
-detailsContainerEl.appendChild(detailsDateEl);
 
-const labelDateEl = document.createElement('h4');
-labelDateEl.classList.add('shows__label');
-labelDateEl.innerText = 'DATE';
-detailsDateEl.appendChild(labelDateEl);
+//for loop for inserting rows with shows details
+  for (let i = 0; i < shows.length; i++) {
+    const detailsContainerEl = document.createElement("div");
+    detailsContainerEl.classList.add("shows__details-container", "shows__row");
+    showsListContainerEl.appendChild(detailsContainerEl);
 
-const dateEl = document.createElement('p');
-dateEl.classList.add('shows__text', 'shows__text--date', 'shows__row');
-dateEl.innerText = show[i].date;
-detailsDateEl.appendChild(dateEl);
+    //date
+    const detailsDateEl = document.createElement("div");
+    detailsDateEl.classList.add("shows__details", "shows__row");
+    detailsContainerEl.appendChild(detailsDateEl);
 
-//venue
-const detailsVenueEl = document.createElement('div');
-detailsVenueEl.classList.add('shows__details', 'shows__row');
-detailsContainerEl.appendChild(detailsVenueEl);
+    const labelDateEl = document.createElement("h4");
+    labelDateEl.classList.add("shows__label");
+    labelDateEl.innerText = "DATE";
+    detailsDateEl.appendChild(labelDateEl);
 
-const labelVenueEl = document.createElement('h4');
-labelVenueEl.classList.add('shows__label');
-labelVenueEl.innerText = 'VENUE';
-detailsVenueEl.appendChild(labelVenueEl);
+    const dateEl = document.createElement("p");
+    dateEl.classList.add("shows__text", "shows__text--date", "shows__row");
+    dateEl.innerText = show[i].date;
+    detailsDateEl.appendChild(dateEl);
 
-const venueEl = document.createElement('p');
-venueEl.classList.add('shows__text', 'shows__text--venue', 'shows__row');
-venueEl.innerText = show[i].venue;
-detailsVenueEl.appendChild(venueEl);
+    //venue
+    const detailsVenueEl = document.createElement("div");
+    detailsVenueEl.classList.add("shows__details", "shows__row");
+    detailsContainerEl.appendChild(detailsVenueEl);
 
-//location
-const detailsLocationEl = document.createElement('div');
-detailsLocationEl.classList.add('shows__details', 'shows__row');
-detailsContainerEl.appendChild(detailsLocationEl);
+    const labelVenueEl = document.createElement("h4");
+    labelVenueEl.classList.add("shows__label");
+    labelVenueEl.innerText = "VENUE";
+    detailsVenueEl.appendChild(labelVenueEl);
 
-const labelLocationEl = document.createElement('h4');
-labelLocationEl.classList.add('shows__label');
-labelLocationEl.innerText = 'LOCATION';
-detailsLocationEl.appendChild(labelLocationEl);
+    const venueEl = document.createElement("p");
+    venueEl.classList.add("shows__text", "shows__text--venue", "shows__row");
+    venueEl.innerText = show[i].venue;
+    detailsVenueEl.appendChild(venueEl);
 
-const locationEl = document.createElement('p');
-locationEl.classList.add('shows__text', 'shows__text--location', 'shows__row');
-locationEl.innerText = show[i].location;
-detailsLocationEl.appendChild(locationEl);
+    //location
+    const detailsLocationEl = document.createElement("div");
+    detailsLocationEl.classList.add("shows__details", "shows__row");
+    detailsContainerEl.appendChild(detailsLocationEl);
 
-//button
-const btnEl = document.createElement('button');
-btnEl.classList.add('shows__button', 'shows__row');
-btnEl.innerText = 'BUY TICKETS';
-detailsContainerEl.appendChild(btnEl);
-}
+    const labelLocationEl = document.createElement("h4");
+    labelLocationEl.classList.add("shows__label");
+    labelLocationEl.innerText = "LOCATION";
+    detailsLocationEl.appendChild(labelLocationEl);
 
-}
+    const locationEl = document.createElement("p");
+    locationEl.classList.add("shows__text", "shows__text--location", "shows__row");
+    locationEl.innerText = show[i].location;
+    detailsLocationEl.appendChild(locationEl);
+
+    //button
+    const btnEl = document.createElement("button");
+    btnEl.classList.add("shows__button", "shows__row");
+    btnEl.innerText = "BUY TICKETS";
+    detailsContainerEl.appendChild(btnEl);
+  }
+};
 
 upcomingShows(shows);
 
-const rows = document.querySelectorAll('.shows__row');
+const rows = document.querySelectorAll(".shows__row");
 
-rows.forEach(row => {
-  row.addEventListener('click', () => {
-    rows.forEach(row => {
-      row.classList.remove('shows__row--selected');
+rows.forEach((row) => {
+  row.addEventListener("click", () => {
+    rows.forEach((row) => {
+      row.classList.remove("shows__row--selected");
     });
-    row.classList.add('shows__row--selected');
+    row.classList.add("shows__row--selected");
   });
 });
-
-
-{/* <section class="shows">
-        <h2 class="section__heading shows__heading">Shows</h2>
-        <div class="shows__container">
-          <div class="shows__info">
-            <h4 class="shows__subheading">DATE</h4>
-            <h4 class="shows__subheading">VENUE</h4>
-            <h4 class="shows__subheading">LOCATION</h4>
-          </div>
-          <div class = shows__list-container>
-          <div class="shows__details-container">
-            <div class="shows__details">
-           -   <h4 class="shows__label">DATE</h4>
-              <p class="shows__text shows__text--date">Mon Sept 06 2021</p>
-            </div>
-            <div class="shows__details">
-              <h4 class="shows__label">VENUE</h4>
-              <p class="shows__text shows__text--venue">Ronald Lane</p>
-            </div>
-            <div class="shows__details">
-              <h4 class="shows__label">LOCATION</h4>
-              <p class="shows__text shows__text--location">San Francisco, CA</p>
-            </div>
-            <button class="shows__button">BUY TICKETS</button>
-          </div>
-          <div class="shows__details-container">
-            <div class="shows__details">
-              <h4 class="shows__label">DATE</h4>
-              <p class="shows__text shows__text--date">Mon Sept 06 2021</p>
-            </div>
-            <div class="shows__details">
-              <h4 class="shows__label">VENUE</h4>
-              <p class="shows__text shows__text--venue">Ronald Lane</p>
-            </div>
-            <div class="shows__details">
-              <h4 class="shows__label">LOCATION</h4>
-              <p class="shows__text shows__text--location">San Francisco, CA</p>
-            </div>
-            <button class="shows__button">BUY TICKETS</button>
-          </div>
-          </div>
-        </div>
-      </section> */}
-
- 
-
-
-
- 
-
- 
-
-
-
- 
-
- 
-
-
-
-
-
- 
-
- 
-

@@ -16,17 +16,22 @@ const comments = [
     }
 ]
 
-const conversation = document.querySelector('.conversation');
 
-//<section class="comments">
-const commentSection = document.createElement('section');
-commentSection.classList.add('comments');
-conversation.appendChild(commentSection);
-// console.log(conversation);
+//adding a section for comments
+// const conversation = document.querySelector('.conversation');
+
+// //<section class="comments">
+// const commentSection = document.createElement('section');
+// commentSection.classList.add('comments');
+// conversation.appendChild(commentSection);
+// // console.log(conversation);
 
 
+
+// function
 const insertComment = (comment) => {
 const commentSectionEl = document.querySelector('.comments');
+
 //<div class="comments__container">
 const commentsContainerEl = document.createElement('div');
 commentsContainerEl.classList.add('comments__container');
@@ -66,26 +71,6 @@ for(let i = 0; i < comments.length; i++){
 }
 
 
-{/* <section class="comments">
-<div class="comments__container">
-  <div class="comments__image-placeholder"></div>
-  <div class="comments__info">
-    <h4 class="comments__heading">Connor Walton</h4>
-    <p class="comments__date">02/17/2021</p>
-    <p class="comments__comment">
-      This is art. This is inexplicable magic expressed in the purest
-      way, everything that makes up this majestic work deserves
-      reverence. Let us appreciate this for what it is and what it
-      contains.
-    </p>
-  </div>
-</div>
-</section>  */}
-
-
-
-
-
 const todaysDate = (date) => {
     let mm = date.getMonth() + 1;
         if (mm < 10) {
@@ -100,7 +85,7 @@ const todaysDate = (date) => {
     return mm + '/' + dd + '/' + yyyy;
     }
 
-const handleFormComment = (event) => {
+const displayComment = (event) => {
     event.preventDefault();
 
     const commentSectionEl = document.querySelector('.comments');
@@ -141,6 +126,5 @@ const handleFormComment = (event) => {
 }
 
 const formEl = document.querySelector('form');
-formEl.addEventListener('submit', handleFormComment);
-
+formEl.addEventListener('submit', displayComment);
 

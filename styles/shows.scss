@@ -90,6 +90,7 @@
     }
   }
 
+  // CSS styling for shows section
   .shows {
     margin-bottom: 5vw;
 
@@ -179,11 +180,13 @@
 
     &__details-container{
       @include page-padding;
+      display: block;
       border-bottom: 1px solid $mercury;
       margin-bottom: 0.57vw;
 
       &:hover {
         background-color: $alabaster;
+        cursor: pointer;
       }
 
       @include tablet {
@@ -196,6 +199,12 @@
       @include desktop {
         margin: 0 3.2vw;
         padding: 1vw 0 0 1.7vw;
+      }
+    }
+
+    &__row {
+      &--selected{
+        background-color: $silver;
       }
     }
 

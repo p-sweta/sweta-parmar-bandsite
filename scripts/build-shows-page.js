@@ -79,12 +79,12 @@ showsContainerEl.appendChild(showsListContainerEl);
 for(let i = 0; i < shows.length; i++) { 
     
 const detailsContainerEl = document.createElement('div');
-detailsContainerEl.classList.add('shows__details-container');
+detailsContainerEl.classList.add('shows__details-container', 'shows__row');
 showsListContainerEl.appendChild(detailsContainerEl);
 
 //date
 const detailsDateEl = document.createElement('div');
-detailsDateEl.classList.add('shows__details');
+detailsDateEl.classList.add('shows__details', 'shows__row');
 detailsContainerEl.appendChild(detailsDateEl);
 
 const labelDateEl = document.createElement('h4');
@@ -93,13 +93,13 @@ labelDateEl.innerText = 'DATE';
 detailsDateEl.appendChild(labelDateEl);
 
 const dateEl = document.createElement('p');
-dateEl.classList.add('shows__text', 'shows__text--date');
+dateEl.classList.add('shows__text', 'shows__text--date', 'shows__row');
 dateEl.innerText = show[i].date;
 detailsDateEl.appendChild(dateEl);
 
 //venue
 const detailsVenueEl = document.createElement('div');
-detailsVenueEl.classList.add('shows__details');
+detailsVenueEl.classList.add('shows__details', 'shows__row');
 detailsContainerEl.appendChild(detailsVenueEl);
 
 const labelVenueEl = document.createElement('h4');
@@ -108,13 +108,13 @@ labelVenueEl.innerText = 'VENUE';
 detailsVenueEl.appendChild(labelVenueEl);
 
 const venueEl = document.createElement('p');
-venueEl.classList.add('shows__text', 'shows__text--venue');
+venueEl.classList.add('shows__text', 'shows__text--venue', 'shows__row');
 venueEl.innerText = show[i].venue;
 detailsVenueEl.appendChild(venueEl);
 
 //location
 const detailsLocationEl = document.createElement('div');
-detailsLocationEl.classList.add('shows__details');
+detailsLocationEl.classList.add('shows__details', 'shows__row');
 detailsContainerEl.appendChild(detailsLocationEl);
 
 const labelLocationEl = document.createElement('h4');
@@ -123,13 +123,13 @@ labelLocationEl.innerText = 'LOCATION';
 detailsLocationEl.appendChild(labelLocationEl);
 
 const locationEl = document.createElement('p');
-locationEl.classList.add('shows__text', 'shows__text--location');
+locationEl.classList.add('shows__text', 'shows__text--location', 'shows__row');
 locationEl.innerText = show[i].location;
 detailsLocationEl.appendChild(locationEl);
 
 //button
 const btnEl = document.createElement('button');
-btnEl.classList.add('shows__button');
+btnEl.classList.add('shows__button', 'shows__row');
 btnEl.innerText = 'BUY TICKETS';
 detailsContainerEl.appendChild(btnEl);
 }
@@ -137,6 +137,18 @@ detailsContainerEl.appendChild(btnEl);
 }
 
 upcomingShows(shows);
+
+const rows = document.querySelectorAll('.shows__row');
+
+rows.forEach(row => {
+  row.addEventListener('click', () => {
+    rows.forEach(row => {
+      row.classList.remove('shows__row--selected');
+    });
+    row.classList.add('shows__row--selected');
+  });
+});
+
 
 {/* <section class="shows">
         <h2 class="section__heading shows__heading">Shows</h2>

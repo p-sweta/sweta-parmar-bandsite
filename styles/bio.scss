@@ -218,6 +218,7 @@
   }
 }
 
+// CSS styling for form section
 .form{
 
   &__container {
@@ -366,6 +367,11 @@
   }
 }
 
+input:focus, textarea:focus {
+  outline: 1px solid $bandsite-black;
+}
+
+// CSS styling for comments section
 .comments {
   margin: 0 5vw 5vw 5vw;
   border-top: 1px solid $mercury;
@@ -390,15 +396,15 @@
   &__image-placeholder {
     border-radius: 50%;
     background-color: $mercury;
-    width: 9rem;
-    height: 2.25rem;
+    width: 2.25rem;
+    height: 2.25rem; 
     margin-top: 5vw;
 
     @include tablet {
       padding: 0 1vw;
       margin-top: 3vw;
-      width: 5.5rem;
-      height: 3rem;
+      width: 48px;
+      height: 48px;
     }
 
     @include desktop {
@@ -409,6 +415,7 @@
   &__info {
     display: flex;
     flex-direction: column;
+    width: 88%;
   }
 
   &__heading {
@@ -448,7 +455,7 @@
     font-size: 0.8rem;
     line-height: 1.4;
     margin: 0;
-    padding: 3.5vw 0 3.5vw 5vw;
+    padding: 3.5vw 0 3.5vw 4.5vw;
 
     @include tablet {
       font-size: 0.85rem;

@@ -1,5 +1,6 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
+@use "./partials/fonts" as *;
 @use "./partials/global" as *;
 
 // // CSS styling for hero section
@@ -12,7 +13,8 @@
   &__heading {
     padding: 24.5vw 5vw;
     margin: auto 0;
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     color: $white;
     font-size: 1.5rem;
 
@@ -73,7 +75,8 @@
   &__paragraph {
     @include page-padding;
     margin: 0.5rem 0 0 0;
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     font-size: 0.8rem;
     line-height: 1.75;
 
@@ -92,7 +95,8 @@
   &__vocalist {
     @include page-padding;
     margin-top: 0.39rem;
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     font-size: 0.85rem;
     line-height: 1.5;
 
@@ -123,7 +127,8 @@
     @include tablet {
       padding: 0;
       font-size: 1.5rem;
-      font-family: "AvenirNextLTPro-Demi";
+      font-family: avenir;
+      font-weight: 600;
       margin-bottom: 0;
     }
   }
@@ -295,7 +300,8 @@
     padding-bottom: 0.3vw;
 
     @include tablet {
-      font-family: "AvenirNextLTPro-Demi";
+      font-family: avenir;
+      font-weight: 600;
       padding: 0;
       font-size: 0.75rem;
     }
@@ -329,7 +335,8 @@
   }
 
   &__comment {
-    font-family: "AvenirNextLTPro-Regular";
+    font-family: avenir;
+    font-weight: 400;
     resize: none;
     height: 6rem;
   }
@@ -417,7 +424,8 @@ textarea:focus {
   }
 
   &__heading {
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     font-size: 0.8rem;
     padding-left: 5vw;
     margin-bottom: 0;

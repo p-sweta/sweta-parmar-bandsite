@@ -143,6 +143,7 @@ upcomingShows(shows);
 
 const rows = document.querySelectorAll(".shows__row");
 
+
 rows.forEach((row) => {
   row.addEventListener("click", () => {
     rows.forEach((row) => {

@@ -1,5 +1,6 @@
 @use "./variables" as *;
 @use "./mixins" as *;
+@use "./fonts" as *;
 
 *,
 *::before,
@@ -9,7 +10,8 @@
 
 body {
   margin: 0;
-  font-family: "AvenirNextLTPro-Regular";
+  font-family: avenir, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
   color: $bandsite-black;
 }
 
@@ -17,7 +19,8 @@ body {
 .section {
   &__heading {
     @include page-padding;
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     font-size: 1.51rem;
     line-height: 2;
     margin: 0;
@@ -122,7 +125,8 @@ body {
     }
 
     &--active {
-      font-family: "AvenirNextLTPro-demi";
+      font-family: avenir;
+      font-weight: 600;
       color: $white;
 
       @include tablet {
@@ -159,7 +163,8 @@ body {
   &__heading {
     padding-top: 1.2rem;
     margin: 0.4rem 0;
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     font-size: 1.4rem;
 
     @include tablet {

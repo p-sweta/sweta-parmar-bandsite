@@ -1,5 +1,6 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
+@use "./partials/fonts" as *;
 @use "./partials/global" as *;
 
 // CSS styling for hero section
@@ -62,7 +63,8 @@
   &__heading {
     padding: 5.8vw 20vw 0 5vw;
     margin: auto 0;
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     color: $white;
     font-size: 1.5rem;
 
@@ -133,7 +135,8 @@
       display: flex;
       color: $silver;
       font-size: 0.7rem;
-      font-family: "AvenirNextLTPro-Demi";
+      font-family: avenir;
+      font-weight: 600;
       margin-top: 0;
       padding: 1.5vw 0vw 0 0;
       width: 25%;
@@ -218,7 +221,8 @@
     color: $silver;
     font-size: 0.6rem;
     padding: 5.2vw 0 2vw 0;
-    font-family: "AvenirNextLTPro-Demi";
+    font-family: avenir;
+    font-weight: 600;
     margin: 0;
 
     @include tablet {
@@ -238,7 +242,9 @@
     }
 
     &--date {
-      font-family: "AvenirNextLTPro-Demi";
+      font-family: avenir;
+      font-weight: 600;
+
       @include tablet {
         padding: 1vw 0 0 0;
       }

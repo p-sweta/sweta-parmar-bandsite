@@ -81,7 +81,7 @@ const comments = [];
 
 
 //function for getting today's date
-const todaysDate = (date) => {
+const date = (date) => {
   let mm = date.getMonth() + 1;
   if (mm < 10) {
     mm = "0" + mm;
@@ -122,8 +122,8 @@ const displayComment = (comments) => {
   commentsInfoEl.appendChild(commentsHeadingEl);
 
   const dateEl = document.createElement("p");
-  // let today = new Date(comment.timestamp);
-  // dateEl.innerText = today.toLocaleDateString;
+  let day = new Date(comment.date);
+  dateEl.innerText = date(day);
   dateEl.classList.add("comments__date");
   commentsInfoEl.appendChild(dateEl);
 
@@ -136,7 +136,7 @@ const displayComment = (comments) => {
 
 axios.get("https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073")
   .then(response => {
-    // console.log(response.data);
+    console.log(response.data);
     response.data.forEach(comment => {
       const commentObj = {name: comment.name, comment: comment.comment, date: comment.timestamp};
       comments.push(commentObj);

@@ -142,6 +142,10 @@ const addNewComment = (e) => {
   .then((resonse) => {
     addComments();
   })
+  .catch(error => {
+    console.error("Something went wrong, try again.")
+  });
+  
   const formEl = document.querySelector("form");
   formEl.reset();
 };
@@ -171,6 +175,9 @@ axios.get(
         return b.date - a.date;
       })
     );
+  })
+  .catch(error => {
+    console.error("Something went wrong, try again.")
   });
 }
 

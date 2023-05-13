@@ -1,43 +1,22 @@
-const shows = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
-
 //adding a section for show section
 // const showsList = document.querySelector('.main');
 // const showsEl = document.createElement('section');
 // showsEl.classList.add('shows');
 // showsList.appendChild(showsEl);
 // console.log(showsList);
+const date = (date) => {
+  let mm = date.getMonth() + 1;
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+  let dd = date.getDate();
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+  let yyyy = date.getFullYear();
 
+  return mm + "/" + dd + "/" + yyyy;
+};
 
 //function for adding a shows section and inserting mutiple rows with show details with for loop 
 const upcomingShows = (show) => {
@@ -81,7 +60,7 @@ const upcomingShows = (show) => {
 
 
 //for loop for inserting rows with shows details
-  for (let i = 0; i < shows.length; i++) {
+  for (let i = 0; i < show.length; i++) {
     const detailsContainerEl = document.createElement("div");
     detailsContainerEl.classList.add("shows__details-container", "shows__row");
     showsListContainerEl.appendChild(detailsContainerEl);
@@ -98,7 +77,8 @@ const upcomingShows = (show) => {
 
     const dateEl = document.createElement("p");
     dateEl.classList.add("shows__text", "shows__text--date", "shows__row");
-    dateEl.innerText = show[i].date;
+    let day = new Date(show[i].date);
+    dateEl.innerText = date(day);
     detailsDateEl.appendChild(dateEl);
 
     //venue
@@ -113,7 +93,7 @@ const upcomingShows = (show) => {
 
     const venueEl = document.createElement("p");
     venueEl.classList.add("shows__text", "shows__text--venue", "shows__row");
-    venueEl.innerText = show[i].venue;
+    venueEl.innerText = show[i].place;
     detailsVenueEl.appendChild(venueEl);
 
     //location
@@ -137,12 +117,8 @@ const upcomingShows = (show) => {
     btnEl.innerText = "BUY TICKETS";
     detailsContainerEl.appendChild(btnEl);
   }
-};
 
-upcomingShows(shows);
-
-const rows = document.querySelectorAll(".shows__row");
-
+  const rows = document.querySelectorAll(".shows__row");
 
 rows.forEach((row) => {
   row.addEventListener("click", () => {
@@ -152,3 +128,20 @@ rows.forEach((row) => {
     row.classList.add("shows__row--selected");
   });
 });
+};
+
+
+const addShows = (show) => {
+  axios.get(
+    "https://project-1-api.herokuapp.com/showdates?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073"
+    )
+    .then((response) => {
+      upcomingShows(response.data)
+    })
+    .catch(error => {
+    console.error("Something went wrong, try again.")
+  });
+
+}
+addShows();
+

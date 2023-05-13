@@ -21,7 +21,7 @@
 
 api_key: "7d36c33f-9d98-40cc-a580-2c9c3af42073";
 
-const comments = [];
+// const comments = [];
 
 //adding a section for comments
 // const conversation = document.querySelector('.conversation');
@@ -117,7 +117,7 @@ const displayComment = (comments) => {
     commentsInfoEl.appendChild(commentsHeadingEl);
 
     const dateEl = document.createElement("p");
-    let day = new Date(comment.date);
+    let day = new Date(comment.timestamp);
     dateEl.innerText = date(day);
     dateEl.classList.add("comments__date");
     commentsInfoEl.appendChild(dateEl);
@@ -129,50 +129,15 @@ const displayComment = (comments) => {
   });
 };
 
-//event listener for adding comments on submit
-const addNewComment = (e) => {
-  e.preventDefault();
-  const name = e.target.fullName.value;
-  const comment = e.target.comment.value;
-  // console.log(comment, name);
-  axios.post(
-    "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073",
-    { name: name, comment: comment }
-  )
-  .then((resonse) => {
-    addComments();
-  })
-  .catch(error => {
-    console.error("Something went wrong, try again.")
-  });
-  
-  const formEl = document.querySelector("form");
-  formEl.reset();
-};
-
-const formEl = document.querySelector("form");
-formEl.addEventListener("submit", addNewComment);
-
-const addComments = () => {
+const addComments = (comment) => {
 axios.get(
     "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073"
   )
   .then((response) => {
-    console.log(response.data);
-    response.data.forEach((comment) => {
-      const commentObj = {
-        name: comment.name,
-        comment: comment.comment,
-        date: comment.timestamp,
-      };
-      comments.push(commentObj);
-    });
-  })
-  .then((results) => {
-    console.log(comments);
+    // console.log(response.data);
     displayComment(
-      comments.sort((a, b) => {
-        return b.date - a.date;
+      response.data.sort((a, b) => {
+        return b.timestamp - a.timestamp;
       })
     );
   })
@@ -183,7 +148,38 @@ axios.get(
 
 addComments();
 
+//event listener for adding comments on submit
 
+const formEl = document.querySelector("form");
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = e.target.fullName.value;
+  const comment = e.target.comment.value;
+  // console.log(comment, name);
+  axios.post(
+    "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073",
+    { name: name, comment: comment }
+  )
+  .then((response) => {
+    addComments(response.data);
+  })
+  .catch(error => {
+    console.error("Something went wrong, try again.")
+  });
+
+  const formEl = document.querySelector("form");
+  formEl.reset();
+}
+)
+
+const deleteComment = (id) => {
+  axios.delete(`https://project-1-api.herokuapp.com/comments/${id}?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073`)
+  .then((response) => {
+    addComments();
+  });
+}
+
+// deleteComment("19b5b94c-2aa0-451f-a554-b56b261347a8");
 
 // const formEl = document.querySelector("form");
 // formEl.addEventListener("submit", )

@@ -1,4 +1,4 @@
-api_key: "7d36c33f-9d98-40cc-a580-2c9c3af42073";
+const apiKey = "7d36c33f-9d98-40cc-a580-2c9c3af42073";
 
 //**************/
 function clearComment() {
@@ -63,9 +63,7 @@ const displayComment = (comments) => {
 
 const addComments = (comment) => {
   axios
-    .get(
-      "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073"
-    )
+    .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
     .then((response) => {
       clearComment();
       displayComment(
@@ -91,10 +89,10 @@ formEl.addEventListener("submit", (e) => {
   const comment = e.target.comment.value;
 
   axios
-    .post(
-      "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073",
-      { name: name, comment: comment }
-    )
+    .post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`, {
+      name: name,
+      comment: comment,
+    })
     .then((response) => {
       addComments(response.data);
     })
@@ -109,11 +107,11 @@ formEl.addEventListener("submit", (e) => {
 const deleteComment = (id) => {
   axios
     .delete(
-      `https://project-1-api.herokuapp.com/comments/${id}?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073`
+      `https://project-1-api.herokuapp.com/comments/${id}?api_key=${apiKey}`
     )
     .then((response) => {
       addComments();
     });
 };
 
-// deleteComment("8d6f9437-99a2-4dad-b0f0-b8479697f10d");
+// deleteComment("68ad3de3-ebc3-427e-b219-b8e4dc980234");

@@ -199,13 +199,13 @@
     }
   }
 
-  &__row { 
-
+  &__row {
+    
     &:hover {
       background-color: $alabaster;
       cursor: pointer;
     }
-    
+
     &--selected {
       background-color: $silver;
     }

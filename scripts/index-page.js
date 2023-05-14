@@ -1,80 +1,12 @@
-// const comments = [
-//   {
-//     name: "Connor Walton",
-//     date: "02/17/2021",
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     name: "Emilie Beach",
-//     date: "01/09/2021",
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     name: "Miles Acosta",
-//     date: "12/20/2020",
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
-
 api_key: "7d36c33f-9d98-40cc-a580-2c9c3af42073";
 
-// const comments = [];
-
-//adding a section for comments
-// const conversation = document.querySelector('.conversation');
-
-// //<section class="comments">
-// const commentSection = document.createElement('section');
-// commentSection.classList.add('comments');
-// conversation.appendChild(commentSection);
-// // console.log(conversation);
-
-//***********/
-// function
-// const insertComment = (comment) => {
-//   const commentSectionEl = document.querySelector(".comments");
-
-//   //<div class="comments__container">
-//   const commentsContainerEl = document.createElement("div");
-//   commentsContainerEl.classList.add("comments__container");
-//   commentSectionEl.appendChild(commentsContainerEl);
-
-//   // <div class="comments__image-placeholder"></div>
-//   const imagePlaceholderEl = document.createElement("div");
-//   imagePlaceholderEl.classList.add("comments__image-placeholder");
-//   commentsContainerEl.appendChild(imagePlaceholderEl);
-
-//   // <div class="comments__info">
-//   const commentsInfoEl = document.createElement("div");
-//   commentsInfoEl.classList.add("comments__info");
-//   commentsContainerEl.appendChild(commentsInfoEl);
-
-//   // <h4 class="comments__heading">name</h4>
-//   const commentsHeadingEl = document.createElement("h4");
-//   commentsHeadingEl.classList.add("comments__heading");
-//   commentsHeadingEl.innerText = comment.name;
-//   commentsInfoEl.appendChild(commentsHeadingEl);
-
-//   const dateEl = document.createElement("p");
-//   dateEl.classList.add("comments__date");
-//   dateEl.innerText = comment.date;
-//   commentsInfoEl.appendChild(dateEl);
-
-//   const commentEl = document.createElement("p");
-//   commentEl.classList.add("comments__comment");
-//   commentEl.innerText = comment.comment;
-//   commentsInfoEl.appendChild(commentEl);
-
-//   return commentsContainerEl;
-// };
-
-// for (let i = 0; i < comments.length; i++) {
-//   insertComment(comments[i]);
-// }
 //**************/
+function clearComment() {
+  const commentSectionEl = document.querySelector(".comments");
+  while (commentSectionEl.firstChild) {
+    commentSectionEl.removeChild(commentSectionEl.firstChild);
+  }
+}
 
 //function for getting today's date
 const date = (date) => {
@@ -130,21 +62,22 @@ const displayComment = (comments) => {
 };
 
 const addComments = (comment) => {
-axios.get(
-    "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073"
-  )
-  .then((response) => {
-    // console.log(response.data);
-    displayComment(
-      response.data.sort((a, b) => {
-        return b.timestamp - a.timestamp;
-      })
-    );
-  })
-  .catch(error => {
-    console.error("Something went wrong, try again.")
-  });
-}
+  axios
+    .get(
+      "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073"
+    )
+    .then((response) => {
+      clearComment();
+      displayComment(
+        response.data.sort((a, b) => {
+          return b.timestamp - a.timestamp;
+        })
+      );
+    })
+    .catch((error) => {
+      console.error("Something went wrong, try again.");
+    });
+};
 
 addComments();
 
@@ -153,34 +86,34 @@ addComments();
 const formEl = document.querySelector("form");
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const name = e.target.fullName.value;
   const comment = e.target.comment.value;
-  // console.log(comment, name);
-  axios.post(
-    "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073",
-    { name: name, comment: comment }
-  )
-  .then((response) => {
-    addComments(response.data);
-  })
-  .catch(error => {
-    console.error("Something went wrong, try again.")
-  });
+
+  axios
+    .post(
+      "https://project-1-api.herokuapp.com/comments?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073",
+      { name: name, comment: comment }
+    )
+    .then((response) => {
+      addComments(response.data);
+    })
+    .catch((error) => {
+      console.error("Something went wrong, try again.");
+    });
 
   const formEl = document.querySelector("form");
   formEl.reset();
-}
-)
+});
 
 const deleteComment = (id) => {
-  axios.delete(`https://project-1-api.herokuapp.com/comments/${id}?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073`)
-  .then((response) => {
-    addComments();
-  });
-}
+  axios
+    .delete(
+      `https://project-1-api.herokuapp.com/comments/${id}?api_key=7d36c33f-9d98-40cc-a580-2c9c3af42073`
+    )
+    .then((response) => {
+      addComments();
+    });
+};
 
-// deleteComment("19b5b94c-2aa0-451f-a554-b56b261347a8");
-
-// const formEl = document.querySelector("form");
-// formEl.addEventListener("submit", )
-
+// deleteComment("8d6f9437-99a2-4dad-b0f0-b8479697f10d");

@@ -118,7 +118,7 @@ const upcomingShows = (show) => {
     detailsContainerEl.appendChild(btnEl);
   }
 
-  const rows = document.querySelectorAll(".shows__row");
+const rows = document.querySelectorAll(".shows__row");
 
 rows.forEach((row) => {
   row.addEventListener("click", () => {
